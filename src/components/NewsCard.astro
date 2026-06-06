@@ -1,0 +1,42 @@
+---
+import type { NewsPost } from '../data/news';
+
+interface Props {
+  post: NewsPost;
+}
+
+const { post } = Astro.props;
+---
+
+<a
+  href={`/news/${post.slug}`}
+  class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col md:flex-row"
+>
+  <!-- Image -->
+  <div
+    class="w-full md:w-[200px] min-h-[150px] flex-shrink-0 relative"
+    style="background: linear-gradient(135deg, #860C1E, #860C1Ecc);"
+  >
+    <img
+      src={post.image}
+      alt={post.title}
+      loading="lazy"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Text Content -->
+  <div class="p-5 flex flex-col justify-center">
+    <div class="text-xs text-earth-brown mb-1">
+      <span class="font-medium">{post.category}</span>
+      <span class="mx-1">&middot;</span>
+      <span>{post.date}</span>
+    </div>
+    <h3 class="text-lg font-semibold text-ink-blue group-hover:text-tibetan-red transition mb-1">
+      {post.title}
+    </h3>
+    <p class="text-sm text-earth-brown">
+      {post.excerpt}
+    </p>
+  </div>
+</a>

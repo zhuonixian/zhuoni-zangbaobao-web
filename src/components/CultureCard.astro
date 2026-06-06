@@ -1,0 +1,44 @@
+---
+import type { Culture } from '../data/cultures';
+
+interface Props {
+  culture: Culture;
+  index: number;
+}
+
+const { culture, index } = Astro.props;
+---
+
+<div class="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row {index % 2 === 1 ? 'md:flex-row-reverse' : ''}">
+  <!-- Image Side -->
+  <div
+    class="w-full md:w-1/2 min-h-[250px] relative"
+    style={`background: linear-gradient(135deg, ${culture.color}, ${culture.color}cc);`}
+  >
+    <img
+      src={culture.image}
+      alt={culture.title}
+      loading="lazy"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Text Side -->
+  <div class="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+    <span class="text-xs font-medium tracking-wider uppercase text-bronze-gold mb-2">
+      文化{index + 1}
+    </span>
+    <h2 class="text-2xl font-bold text-ink-blue mb-3">
+      {culture.title}
+    </h2>
+    <p class="text-earth-brown leading-relaxed mb-4">
+      {culture.description}
+    </p>
+    <a
+      href={`/culture#${culture.slug}`}
+      class="text-tibetan-red font-medium hover:underline self-start"
+    >
+      了解更多&arr;
+    </a>
+  </div>
+</div>
