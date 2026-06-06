@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageBanner from '@/components/PageBanner.astro';
+import CultureCard from '@/components/CultureCard.astro';
+import { cultures } from '@/data/cultures';
+
+const mainCultures = cultures.slice(0, 2);
+const sideCultures = cultures.slice(2);
+---
+
+<BaseLayout title="文化故事 - 藏宝宝">
+  <PageBanner
+    title="藏王故里·秘境卓尼"
+    subtitle="探索卓尼五大地域文化"
+    label="CULTURE & STORIES"
+  />
+
+  <!-- Main Culture Section -->
+  <section class="section-padding bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+      {mainCultures.map((culture, index) => (
+        <div id={culture.slug}>
+          <CultureCard culture={culture} index={index} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Side Cultures Section -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sideCultures.map((culture, index) => (
+          <div
+            id={culture.slug}
+            class="bg-cream rounded-lg p-6 text-center hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold"
+              style={`background-color: ${culture.color};`}
+            >
+              {culture.title.charAt(0)}
+            </div>
+            <h3 class="text-xl font-bold text-ink-blue mb-1">
+              {culture.title}
+            </h3>
+            <p class="text-sm text-earth-brown mb-3">
+              {culture.subtitle}
+            </p>
+            <p class="text-earth-brown leading-relaxed">
+              {culture.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
