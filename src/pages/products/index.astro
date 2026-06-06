@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageBanner from '@/components/PageBanner.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import { products, categories } from '@/data/products';
+---
+
+<BaseLayout title="高原珍品 - 卓尼藏宝宝">
+  <PageBanner
+    title="高原珍品"
+    subtitle="来自海拔2000米以上雪域高原的天然馈赠"
+    label="OUR PRODUCTS"
+    gradient="from-prairie-green to-prairie-green/80"
+  />
+
+  <!-- Category Filter -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div
+      x-data="{ active: 'all' }"
+      class="flex flex-wrap gap-3 justify-center"
+    >
+      {categories.map((cat) => (
+        <button
+          type="button"
+          class="px-5 py-2 rounded-full text-sm font-medium transition"
+          x-bind:class={cat.slug === 'all'
+            ? `active === '${cat.slug}' ? 'bg-tibetan-red text-white' : 'bg-white text-ink-blue'`
+            : `active === '${cat.slug}' ? 'bg-tibetan-red text-white' : 'bg-white text-ink-blue'`
+          }
+          x-on:click={`active = '${cat.slug}'`}
+          x-bind:aria-pressed={`active === '${cat.slug}'`}
+        >
+          {cat.name}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map((product) => (
+        <div
+          x-data={`{ show: true }`}
+          x-init={`show = active === 'all' || active === '${product.categorySlug}'`}
+          x-effect={`show = active === 'all' || active === '${product.categorySlug}'`}
+          x-show="show"
+          x-transition
+        >
+          <ProductCard product={product} />
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
