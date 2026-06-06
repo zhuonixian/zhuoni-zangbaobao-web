@@ -16,6 +16,24 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "卓尼县藏宝宝网络有限责任公司",
+  "description": "高原绿色生态土特产电商服务平台",
+  "url": Astro.site?.toString(),
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "卓尼县",
+    "addressRegion": "甘肃省甘南藏族自治州",
+    "addressCountry": "CN"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "秘境卓尼"
+  }
+};
 ---
 
 <!doctype html>
@@ -43,6 +61,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:image" content={ogImage} />
 
     <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="min-h-screen flex flex-col bg-cream text-ink-blue font-sans">
     <Navbar />
