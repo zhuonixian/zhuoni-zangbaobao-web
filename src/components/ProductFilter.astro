@@ -1,0 +1,21 @@
+---
+import { categories } from '@/data/products';
+---
+
+<div
+  x-data="{ active: 'all' }"
+  class="flex flex-wrap gap-3 justify-center"
+>
+  {categories.map((cat) => (
+    <button
+      type="button"
+      class="rounded-full px-4 py-2 text-sm transition"
+      :class={cat.slug === 'all'
+        ? "active === 'all' ? 'bg-tibetan-red text-white' : 'bg-cream text-ink-blue hover:bg-linen'"
+        : `active === '${cat.slug}' ? 'bg-tibetan-red text-white' : 'bg-cream text-ink-blue hover:bg-linen'`}
+      @click={`active = '${cat.slug}'; $dispatch('filter-change', '${cat.slug}')`}
+    >
+      {cat.name}
+    </button>
+  ))}
+</div>

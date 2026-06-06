@@ -1,0 +1,65 @@
+---
+import type { Product } from '@/data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  mushroom: 'bg-amber-100 text-amber-800',
+  herbs: 'bg-green-100 text-green-800',
+  livestock: 'bg-red-100 text-red-800',
+  'wild-plants': 'bg-emerald-100 text-emerald-800',
+  'grain-oil': 'bg-yellow-100 text-yellow-800',
+  honey: 'bg-orange-100 text-orange-800',
+  crafts: 'bg-purple-100 text-purple-800',
+};
+
+const tagColor = categoryColors[product.categorySlug] || 'bg-gray-100 text-gray-800';
+---
+
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+  <!-- Image Area -->
+  <div class="relative h-48 bg-gradient-to-br from-prairie-green/80 to-prairie-green">
+    <img
+      src={product.image}
+      alt={product.name}
+      loading="lazy"
+      onerror="this.style.display='none'"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Content Area -->
+  <div class="p-5">
+    <!-- Category Tag -->
+    <span class={`inline-block px-2.5 py-0.5 rounded text-xs font-medium ${tagColor}`}>
+      {product.category}
+    </span>
+
+    <!-- Product Name -->
+    <h3 class="mt-2 text-lg font-semibold text-ink-blue">
+      {product.name}
+    </h3>
+
+    <!-- Description -->
+    <p class="mt-1 text-sm text-earth-brown line-clamp-2">
+      {product.description}
+    </p>
+
+    <!-- Bottom Bar -->
+    <div class="mt-4 pt-3 border-t border-linen flex items-center justify-between">
+      <a
+        href={`/products/${product.slug}`}
+        class="text-sm font-medium text-tibetan-red hover:underline"
+      >
+        查看详情&rar;
+      </a>
+      <span class="text-xs text-bronze-gold">
+        产地：{product.origin}
+      </span>
+    </div>
+  </div>
+</div>
