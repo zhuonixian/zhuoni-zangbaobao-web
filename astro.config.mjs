@@ -9,5 +9,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwind()],
   },
-  site: 'https://zangbaobao.com',
+  site: 'https://zangbaobao-zhuonixian.pages.dev',
 });
