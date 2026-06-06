@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B4C3B"/>
+      <stop offset="100%" stop-color="#860C1E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B6A766" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#B6A766" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#B6A766" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Decorative pattern -->
+  <rect x="30" y="30" width="740" height="340" rx="8" fill="none" stroke="#B6A766" stroke-width="1" opacity="0.15"/>
+  <!-- Decorative diamond pattern -->
+  <polygon points="400,85 430,115 400,145 370,115" fill="none" stroke="#B6A766" stroke-width="1" opacity="0.2"/>
+  <polygon points="400,95 420,115 400,135 380,115" fill="none" stroke="#B6A766" stroke-width="0.5" opacity="0.12"/>
+  <!-- Decorative circles -->
+  <circle cx="680" cy="320" r="70" fill="#B6A766" opacity="0.04"/>
+  <circle cx="120" cy="80" r="50" fill="#B6A766" opacity="0.04"/>
+  <!-- Category label -->
+  <rect x="60" y="60" width="100" height="28" rx="4" fill="#B6A766" opacity="0.15"/>
+  <text x="110" y="79" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#B6A766">文化</text>
+  <!-- Center divider -->
+  <rect x="200" y="195" width="400" height="1.5" fill="url(#accent)"/>
+  <!-- Title -->
+  <text x="400" y="240" text-anchor="middle" font-family="serif" font-size="42" fill="white" font-weight="bold">觉乃民俗文化</text>
+  <text x="400" y="280" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#B6A766" opacity="0.7">藏族风情 · 多元交融</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D5016"/>
+      <stop offset="100%" stop-color="#B6A766"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Decorative pattern -->
+  <rect x="30" y="30" width="740" height="340" rx="8" fill="none" stroke="white" stroke-width="1" opacity="0.12"/>
+  <!-- Inkstone decorative pattern -->
+  <rect x="340" y="90" width="120" height="80" rx="10" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+  <ellipse cx="400" cy="130" rx="30" ry="20" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/>
+  <!-- Decorative circles -->
+  <circle cx="680" cy="320" r="70" fill="white" opacity="0.04"/>
+  <circle cx="120" cy="80" r="50" fill="white" opacity="0.04"/>
+  <!-- Category label -->
+  <rect x="60" y="60" width="100" height="28" rx="4" fill="white" opacity="0.12"/>
+  <text x="110" y="79" text-anchor="middle" font-family="sans-serif" font-size="13" fill="white">文化</text>
+  <!-- Center divider -->
+  <rect x="200" y="195" width="400" height="1.5" fill="url(#accent)"/>
+  <!-- Title -->
+  <text x="400" y="240" text-anchor="middle" font-family="serif" font-size="42" fill="white" font-weight="bold">洮砚产业文化</text>
+  <text x="400" y="280" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white" opacity="0.6">千年名砚 · 匠心传承</text>
+</svg>

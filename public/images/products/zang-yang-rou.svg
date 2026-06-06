@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#860C1E"/>
+      <stop offset="100%" stop-color="#6B4C3B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B6A766" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#B6A766" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#B6A766" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="195" width="600" height="2" fill="url(#accent)"/>
+  <circle cx="510" cy="85" r="60" fill="#B6A766" opacity="0.06"/>
+  <circle cx="90" cy="330" r="40" fill="#1A1A2E" opacity="0.06"/>
+  <!-- Category label -->
+  <rect x="20" y="20" width="80" height="26" rx="4" fill="#B6A766" opacity="0.2"/>
+  <text x="60" y="38" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#B6A766">高原畜产</text>
+  <!-- Product icon -->
+  <path d="M270 170 Q285 135 300 140 Q315 135 330 170" fill="none" stroke="#B6A766" stroke-width="1.5" opacity="0.5"/>
+  <path d="M285 170 L315 170" fill="none" stroke="#B6A766" stroke-width="1" opacity="0.3"/>
+  <!-- Name -->
+  <text x="300" y="240" text-anchor="middle" font-family="serif" font-size="36" fill="white" font-weight="bold">藏羊肉</text>
+  <text x="300" y="272" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#B6A766" opacity="0.7">鲜嫩无膻 · 风味纯正</text>
+</svg>

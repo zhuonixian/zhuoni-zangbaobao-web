@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="40%" stop-color="#860C1E"/>
+      <stop offset="70%" stop-color="#B6A766"/>
+      <stop offset="100%" stop-color="#2D5016"/>
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6B4C3B" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="mountain2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D5016" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#2D5016" stop-opacity="0.3"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#B6A766" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#B6A766" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="1200" height="500" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="600" cy="180" r="120" fill="url(#sun)"/>
+  <!-- Far mountains -->
+  <path d="M0 350 L150 200 L300 280 L450 160 L600 240 L750 140 L900 220 L1050 170 L1200 250 L1200 500 L0 500Z" fill="url(#mountain1)"/>
+  <!-- Near mountains -->
+  <path d="M0 400 L100 280 L250 340 L400 250 L550 320 L700 230 L850 310 L1000 260 L1200 330 L1200 500 L0 500Z" fill="url(#mountain2)"/>
+  <!-- Grassland -->
+  <rect x="0" y="400" width="1200" height="100" fill="#2D5016" opacity="0.5"/>
+  <!-- Decorative waves -->
+  <path d="M0 430 Q150 410 300 430 Q450 450 600 430 Q750 410 900 430 Q1050 450 1200 430 L1200 500 L0 500Z" fill="#2D5016" opacity="0.3"/>
+  <!-- Clouds -->
+  <ellipse cx="200" cy="100" rx="80" ry="30" fill="white" opacity="0.1"/>
+  <ellipse cx="900" cy="80" rx="100" ry="35" fill="white" opacity="0.08"/>
+  <!-- Title -->
+  <text x="600" y="280" text-anchor="middle" font-family="serif" font-size="48" fill="white" font-weight="bold" opacity="0.95">卓尼高原风光</text>
+  <text x="600" y="320" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#B6A766" opacity="0.8">藏王故里 · 秘境卓尼</text>
+</svg>

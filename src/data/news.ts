@@ -47,7 +47,7 @@ export const newsPosts: NewsPost[] = [
     `.trim(),
     date: '2025-08-16',
     category: '产业动态',
-    image: '/images/news/black-fungus-conference.jpg',
+    image: '/images/culture/tusi.svg',
   },
   {
     slug: 'huinong-mall-launch',
@@ -65,7 +65,7 @@ export const newsPosts: NewsPost[] = [
     `.trim(),
     date: '2025-06-22',
     category: '品牌动态',
-    image: '/images/news/huinong-mall.jpg',
+    image: '/images/culture/ecology.svg',
   },
   {
     slug: 'consumer-assistance-award',
@@ -81,7 +81,7 @@ export const newsPosts: NewsPost[] = [
     `.trim(),
     date: '2025-03-12',
     category: '品牌动态',
-    image: '/images/news/consumer-assistance-award.jpg',
+    image: '/images/culture/jue-nai.svg',
   },
   {
     slug: 'eco-brand-launch',
@@ -99,7 +99,7 @@ export const newsPosts: NewsPost[] = [
     `.trim(),
     date: '2025-01-20',
     category: '活动通知',
-    image: '/images/news/eco-brand-launch.jpg',
+    image: '/images/culture/tao-yan.svg',
   },
 ];
 

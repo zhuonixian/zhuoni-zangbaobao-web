@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B6A766"/>
+      <stop offset="100%" stop-color="#860C1E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="195" width="600" height="2" fill="url(#accent)"/>
+  <circle cx="480" cy="90" r="55" fill="#2D5016" opacity="0.06"/>
+  <circle cx="120" cy="330" r="40" fill="#6B4C3B" opacity="0.06"/>
+  <!-- Category label -->
+  <rect x="20" y="20" width="80" height="26" rx="4" fill="white" opacity="0.15"/>
+  <text x="60" y="38" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">蜂产品</text>
+  <!-- Product icon - hexagon (honeycomb) -->
+  <polygon points="300,130 325,142 325,168 300,180 275,168 275,142" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="300,142 312,148 312,162 300,168 288,162 288,148" fill="none" stroke="white" stroke-width="0.8" opacity="0.2"/>
+  <!-- Name -->
+  <text x="300" y="240" text-anchor="middle" font-family="serif" font-size="36" fill="white" font-weight="bold">土蜂蜜</text>
+  <text x="300" y="272" text-anchor="middle" font-family="sans-serif" font-size="14" fill="white" opacity="0.6">高原百花蜜 · 天然成熟</text>
+</svg>
