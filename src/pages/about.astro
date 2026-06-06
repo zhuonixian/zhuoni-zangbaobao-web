@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageBanner from '@/components/PageBanner.astro';
+---
+
+<BaseLayout title="关于我们 - 藏宝宝">
+  <PageBanner
+    title="关于我们"
+    subtitle="扎根秘境卓尼·连接高原与世界"
+    label="ABOUT US"
+  />
+
+  <!-- Company Profile -->
+  <section class="section-padding bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Left: Company Intro -->
+        <div>
+          <h2 class="text-3xl font-light text-ink-blue mb-6">公司简介</h2>
+          <p class="text-earth-brown leading-relaxed mb-4">
+            卓尼县藏宝宝网络有限责任公司是卓尼县电子商务进农村综合示范项目承办企业，致力于推动高原特色农产品的标准化、品牌化和电商化发展。公司扎根甘南藏族自治州卓尼县，依托得天独厚的高原生态环境和丰富的农特产品资源，打造从田间到餐桌的全链条服务体系。
+          </p>
+          <p class="text-earth-brown leading-relaxed">
+            公司运营"秘境卓尼"县域公共品牌，整合当地优质农特产品资源，通过电商平台将卓尼的绿色生态产品推向全国市场，让更多人品尝到来自高原的天然珍品，同时带动当地农牧民增收致富，助力乡村振兴。
+          </p>
+        </div>
+
+        <!-- Right: Core Business Card -->
+        <div class="bg-tibetan-red rounded-lg p-8">
+          <span class="text-bronze-gold text-sm tracking-[0.2em] font-medium">核心业务</span>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-start">
+              <span class="text-bronze-gold mr-3 mt-1">◆</span>
+              <span class="text-white">农产品标准化与质量追溯体系建设</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-bronze-gold mr-3 mt-1">◆</span>
+              <span class="text-white">县域公共品牌"秘境卓尼"运营</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-bronze-gold mr-3 mt-1">◆</span>
+              <span class="text-white">电商服务与网络营销策划</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-bronze-gold mr-3 mt-1">◆</span>
+              <span class="text-white">产品检测与绿色/有机/地理标志认证</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-bronze-gold mr-3 mt-1">◆</span>
+              <span class="text-white">供应链建设与农产品品牌培育</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-light text-ink-blue text-center mb-12">企业使命与愿景</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <!-- Mission -->
+        <div class="bg-cream rounded-lg p-6 border-t-4 border-tibetan-red text-center">
+          <h3 class="text-xl font-medium text-ink-blue mb-4">使命</h3>
+          <p class="text-earth-brown leading-relaxed">让高原珍品走出大山<br/>让世界品味卓尼</p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-cream rounded-lg p-6 border-t-4 border-bronze-gold text-center">
+          <h3 class="text-xl font-medium text-ink-blue mb-4">愿景</h3>
+          <p class="text-earth-brown leading-relaxed">成为甘南州领先的<br/>农产品电商服务平台</p>
+        </div>
+
+        <!-- Values -->
+        <div class="bg-cream rounded-lg p-6 border-t-4 border-prairie-green text-center">
+          <h3 class="text-xl font-medium text-ink-blue mb-4">价值观</h3>
+          <p class="text-earth-brown leading-relaxed">品质为本·诚信经营<br/>文化传承·助农致富</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
