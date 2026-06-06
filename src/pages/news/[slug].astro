@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import { newsPosts, getNewsBySlug } from '@/data/news';
+
+export function getStaticPaths() {
+  return newsPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const otherPosts = newsPosts.filter((n) => n.slug !== post.slug).slice(0, 3);
+---
+
+<BaseLayout title={`${post.title} - 藏宝宝`}>
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <ol class="flex items-center gap-2 text-sm text-earth-brown">
+      <li>
+        <a href="/" class="hover:text-tibetan-red transition">首页</a>
+      </li>
+      <li>/</li>
+      <li>
+        <a href="/news" class="hover:text-tibetan-red transition">新闻资讯</a>
+      </li>
+      <li>/</li>
+      <li class="text-ink-blue font-medium truncate max-w-[200px] sm:max-w-none">
+        {post.title}
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Category + Date -->
+    <div class="flex items-center gap-3 text-sm text-earth-brown mb-4">
+      <span class="inline-block bg-tibetan-red/10 text-tibetan-red px-3 py-1 rounded-full font-medium">
+        {post.category}
+      </span>
+      <span>{post.date}</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-3xl md:text-4xl font-bold text-ink-blue mb-8">
+      {post.title}
+    </h1>
+
+    <!-- Hero Image -->
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img
+        src={post.image}
+        alt={post.title}
+        class="w-full h-auto object-cover"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="text-earth-brown leading-relaxed space-y-4 [&>p]:mb-4">
+      <Fragment set:html={post.content} />
+    </div>
+  </article>
+
+  <!-- Other News Section -->
+  {otherPosts.length > 0 && (
+    <section class="bg-white section-padding">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-ink-blue mb-6">其他新闻</h2>
+        <div class="flex flex-col gap-6">
+          {otherPosts.map((other) => (
+            <NewsCard post={other} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
