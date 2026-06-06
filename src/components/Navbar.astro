@@ -1,0 +1,113 @@
+---
+const navLinks = [
+  { href: '/', text: '首页' },
+  { href: '/about', text: '关于我们' },
+  { href: '/products', text: '产品展示' },
+  { href: '/culture', text: '文化故事' },
+  { href: '/news', text: '新闻资讯' },
+  { href: '/contact', text: '联系我们' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  x-data="{ open: false, scrolled: false }"
+  @scroll.window="scrolled = window.scrollY > 50"
+  :class="scrolled ? 'bg-white shadow-md' : 'bg-transparent'"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl lg:text-3xl font-bold text-bronze-gold">
+          藏宝宝
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-1">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href ||
+            (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                'px-4 py-2 rounded-md text-sm font-medium transition-all duration-200',
+                isActive && 'text-tibetan-red font-semibold',
+              ]}
+              {...(!isActive && {
+                ':class': "scrolled ? 'text-ink-blue hover:text-tibetan-red' : 'text-white/90 hover:text-white'",
+              })}
+            >
+              {link.text}
+            </a>
+          );
+        })}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="lg:hidden p-2 rounded-md transition-colors duration-200"
+        :class="scrolled ? 'text-ink-blue' : 'text-white'"
+        @click="open = !open"
+        aria-label="Toggle navigation menu"
+      >
+        <svg
+          x-show="!open"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg
+          x-show="open"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          x-transition
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      x-show="open"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="lg:hidden pb-4"
+      @click.outside="open = false"
+    >
+      <div class="bg-white rounded-lg shadow-lg p-4 space-y-1">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href ||
+            (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                'block px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-200',
+                isActive
+                  ? 'bg-tibetan-red/10 text-tibetan-red font-semibold'
+                  : 'text-ink-blue hover:bg-cream hover:text-tibetan-red',
+              ]}
+            >
+              {link.text}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </nav>
+</header>
