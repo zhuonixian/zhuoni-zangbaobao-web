@@ -1,17 +1,183 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import StatsSection from '@/components/StatsSection.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import { products } from '@/data/products';
+import { cultures } from '@/data/cultures';
+import { newsPosts } from '@/data/news';
+
+const featuredSlugs = ['hei-mu-er', 'dang-gui', 'jue-ma-zhu-rou', 'tao-yan'];
+const featuredProducts = featuredSlugs
+  .map((slug) => products.find((p) => p.slug === slug))
+  .filter(Boolean);
+
+const latestNews = newsPosts.slice(0, 3);
 ---
 
-<html lang="zh-CN">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>藏宝宝 - 卓尼藏族文化</title>
-	</head>
-	<body class="bg-cream text-ink-blue font-sans">
-		<h1 class="text-tibetan-red text-4xl font-bold p-8">藏宝宝</h1>
-	</body>
-</html>
+<BaseLayout title="藏宝宝 - 来自雪域高原的馈赠">
+  <!-- Section 1: Hero -->
+  <HeroSection />
+
+  <!-- Section 2: About Summary -->
+  <StatsSection />
+
+  <!-- Section 3: Featured Products -->
+  <section class="bg-linen py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-tibetan-red tracking-[0.2em] text-sm font-semibold uppercase">
+          PRODUCTS
+        </span>
+        <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-ink-blue">
+          高原甄选好物
+        </h2>
+        <p class="mt-3 text-earth-brown max-w-2xl mx-auto">
+          甄选雪域高原纯净生态土特产，从山珍到药材，每一件都是大自然的馈赠
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredProducts.map((product) => (
+          <ProductCard product={product!} />
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="/products"
+          class="inline-flex items-center gap-2 bg-tibetan-red text-white px-8 py-3 rounded-md font-medium text-sm tracking-wide transition-all duration-200 hover:brightness-110 hover:scale-105"
+        >
+          查看全部产品 &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Culture Preview -->
+  <section class="bg-ink-blue py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-bronze-gold tracking-[0.2em] text-sm font-semibold uppercase">
+          CULTURE
+        </span>
+        <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-white">
+          藏王故里 · 文化卓尼
+        </h2>
+        <p class="mt-3 text-white/60 max-w-2xl mx-auto">
+          深厚的藏族文化底蕴，从土司历史到藏传佛教，从非遗传承到生态秘境
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {cultures.map((culture) => (
+          <a
+            href={`/culture#${culture.slug}`}
+            class="group bg-white/5 backdrop-blur-sm rounded-lg p-5 text-center transition-all duration-200 hover:bg-white/10 hover:scale-105 border border-white/10"
+          >
+            <div
+              class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3"
+              style={`background-color: ${culture.color}20;`}
+            >
+              <div
+                class="w-3 h-3 rounded-full"
+                style={`background-color: ${culture.color};`}
+              />
+            </div>
+            <h3 class="text-white font-semibold text-sm mb-1 group-hover:text-bronze-gold transition">
+              {culture.title}
+            </h3>
+            <p class="text-white/50 text-xs line-clamp-2">
+              {culture.subtitle}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="/culture"
+          class="inline-flex items-center gap-2 border-2 border-bronze-gold text-bronze-gold px-8 py-3 rounded-md font-medium text-sm tracking-wide transition-all duration-200 hover:bg-bronze-gold hover:text-ink-blue"
+        >
+          探索藏族文化 &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: News Summary -->
+  <section class="bg-cream py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-tibetan-red tracking-[0.2em] text-sm font-semibold uppercase">
+          NEWS
+        </span>
+        <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-ink-blue">
+          新闻资讯
+        </h2>
+        <p class="mt-3 text-earth-brown max-w-2xl mx-auto">
+          了解藏宝宝最新动态，关注高原产业发展与品牌故事
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        {latestNews.map((post) => (
+          <NewsCard post={post} />
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="/news"
+          class="inline-flex items-center gap-2 text-tibetan-red font-medium text-sm hover:underline"
+        >
+          查看全部 &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Contact CTA -->
+  <section class="bg-tibetan-red py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white">
+        与我们合作
+      </h2>
+      <p class="mt-4 text-white/80 max-w-2xl mx-auto leading-relaxed">
+        无论您是经销商、合作伙伴还是消费者，我们都期待与您的每一次连接。
+        让高原珍品走进千家万户，让藏地文化薪火相传。
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 text-white/70 justify-center">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          contact@zangbaobao.com
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          0941-1234567
+        </span>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center bg-white text-tibetan-red px-8 py-3 rounded-md font-medium text-sm tracking-wide transition-all duration-200 hover:bg-cream hover:scale-105"
+        >
+          联系我们
+        </a>
+        <a
+          href="/products"
+          class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-md font-medium text-sm tracking-wide transition-all duration-200 hover:bg-white hover:text-tibetan-red"
+        >
+          在线购买
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
