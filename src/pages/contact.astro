@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageBanner from '@/components/PageBanner.astro';
+import ContactForm from '@/components/ContactForm.astro';
+---
+
+<BaseLayout title="联系我们 - 藏宝宝">
+  <PageBanner
+    title="联系我们"
+    subtitle="期待与您的合作"
+    label="CONTACT US"
+  />
+
+  <section class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-lg overflow-hidden shadow-sm">
+        <!-- Left Column: Contact Form -->
+        <div class="bg-cream p-8 lg:p-12">
+          <span class="text-tibetan-red text-sm tracking-[0.3em]">CONTACT US</span>
+          <h2 class="text-2xl font-semibold text-ink-blue mt-2 mb-6">联系我们</h2>
+          <ContactForm />
+        </div>
+
+        <!-- Right Column: Contact Info -->
+        <div class="bg-ink-blue text-white p-8 lg:p-12">
+          <h2 class="text-2xl font-light mb-8">联系方式</h2>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-sm text-white/60 mb-1">地址</h3>
+              <p>甘肃省甘南藏族自治州卓尼县</p>
+            </div>
+
+            <div>
+              <h3 class="text-sm text-white/60 mb-1">邮箱</h3>
+              <p>contact@zangbaobao.com</p>
+            </div>
+          </div>
+
+          <!-- Purchase Channels -->
+          <div class="border-t border-white/10 mt-8 pt-8">
+            <span class="text-bronze-gold text-sm tracking-[0.2em]">线上购买渠道</span>
+            <div class="flex gap-4 mt-4">
+              <div class="w-24 h-24 bg-white/10 rounded-lg flex items-center justify-center text-xs text-white/60 text-center">
+                微信二维码
+              </div>
+              <div class="w-24 h-24 bg-white/10 rounded-lg flex items-center justify-center text-xs text-white/60 text-center">
+                淘宝店铺
+              </div>
+              <div class="w-24 h-24 bg-white/10 rounded-lg flex items-center justify-center text-xs text-white/60 text-center">
+                惠农商城
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
