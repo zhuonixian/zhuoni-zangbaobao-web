@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="藏宝宝品牌Logo SVG">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D0BE77"/>
+      <stop offset="0.45" stop-color="#B6A766"/>
+      <stop offset="1" stop-color="#8D7C3C"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B20A20"/>
+      <stop offset="1" stop-color="#860C1E"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1A2E"/>
+      <stop offset="1" stop-color="#07182A"/>
+    </linearGradient>
+    <style>
+      .gold-stroke{stroke:url(#gold);stroke-linecap:square;stroke-linejoin:miter;fill:none;}
+      .red-stroke{stroke:url(#red);stroke-linecap:round;stroke-linejoin:round;fill:none;}
+      .brand{font-family:"Noto Serif CJK SC","Source Han Serif SC","SimSun","Songti SC",serif;font-weight:800;}
+      .sub{font-family:"Noto Serif CJK SC","Source Han Serif SC","SimSun","Songti SC",serif;font-weight:600;}
+      .company{font-family:"Noto Serif CJK SC","Source Han Serif SC","SimSun","Songti SC",serif;font-weight:500;}
+    </style>
+  </defs>
+
+  <!-- Transparent background by default. Add <rect width="1024" height="1024" fill="#fff"/> if a white background is needed. -->
+
+  <g id="symbol" transform="translate(0,0)">
+    <!-- Tibetan red rising arc -->
+    <path class="red-stroke" d="M286 356 A258 258 0 0 1 738 356" stroke-width="22"/>
+
+    <!-- Snow mountain skyline -->
+    <path class="gold-stroke" d="M238 402 L348 314 L379 342 L447 276 L492 310 L528 224 L592 335 L626 312 L705 393" stroke-width="18"/>
+    <path class="gold-stroke" d="M385 405 L444 324 L482 349 L528 224" stroke-width="13" opacity="0.94"/>
+    <path class="gold-stroke" d="M513 359 L555 301 L595 373" stroke-width="13" opacity="0.94"/>
+    <path class="gold-stroke" d="M327 405 L363 360 L394 377" stroke-width="12" opacity="0.94"/>
+
+    <!-- Mountain snow negative-style highlights -->
+    <path d="M520 249 L501 320 L531 294 L517 344 L559 287 Z" fill="#FFFFFF" opacity="0.96"/>
+    <path d="M445 309 L424 370 L455 344 L445 386 L482 338 Z" fill="#FFFFFF" opacity="0.96"/>
+    <path d="M591 333 L574 392 L602 367 L594 405 L630 356 Z" fill="#FFFFFF" opacity="0.96"/>
+    <path d="M349 332 L328 385 L361 360 L350 400 L386 352 Z" fill="#FFFFFF" opacity="0.96"/>
+
+    <!-- Simplified auspicious knot -->
+    <g id="auspicious-knot" transform="translate(392 214) scale(0.86)" stroke="url(#gold)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 28 C0 10 18 0 31 13 C43 25 35 43 18 43 C4 43 -8 32 0 18 L39 58"/>
+      <path d="M39 28 C39 10 58 0 70 13 C82 25 74 43 58 43 C43 43 31 32 39 18 L0 58"/>
+      <path d="M0 58 C0 77 18 86 31 73 C43 61 35 43 18 43"/>
+      <path d="M39 58 C39 77 58 86 70 73 C82 61 74 43 58 43"/>
+    </g>
+
+    <!-- Tao River flowing curve -->
+    <path d="M364 410
+             C452 382 552 398 586 438
+             C622 480 552 512 476 512
+             C390 512 328 535 318 578
+             C303 641 425 654 535 635
+             C625 620 684 586 706 552
+             C653 596 553 620 454 604
+             C387 593 364 572 393 552
+             C421 533 493 538 551 516
+             C604 496 610 456 551 436
+             C494 416 429 425 364 410 Z" fill="url(#navy)"/>
+    <path d="M410 436
+             C478 418 552 430 573 456
+             C596 485 528 499 477 501
+             C528 485 535 463 493 448
+             C462 436 435 435 410 436 Z" fill="#FFFFFF" opacity="0.96"/>
+    <path d="M330 587 C378 552 447 557 505 545 C465 567 421 581 379 590 C354 596 340 600 330 587 Z" fill="#FFFFFF" opacity="0.88"/>
+    <path d="M348 612 C410 641 537 631 635 595" stroke="#FFFFFF" stroke-width="10" opacity="0.92" fill="none" stroke-linecap="round"/>
+
+    <!-- Lotus and red accent base -->
+    <g id="lotus" transform="translate(652 402)">
+      <path d="M80 130 C50 95 55 58 86 28 C119 58 124 95 94 130 Z" fill="#FFFFFF" stroke="url(#gold)" stroke-width="13" stroke-linejoin="round"/>
+      <path d="M25 151 C40 112 72 92 106 103 C86 139 55 158 25 151 Z" fill="#FFFFFF" stroke="url(#gold)" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M151 151 C136 112 104 92 70 103 C90 139 121 158 151 151 Z" fill="#FFFFFF" stroke="url(#gold)" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M86 55 C106 82 108 112 88 139 C68 112 69 82 86 55 Z" fill="url(#red)"/>
+      <path d="M0 166 C66 144 132 145 191 166" stroke="url(#gold)" stroke-width="12" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- Lower crimson swoosh -->
+    <path class="red-stroke" d="M418 613 C506 652 640 648 752 590" stroke-width="14"/>
+    <path class="red-stroke" d="M710 586 C738 581 760 584 781 591" stroke-width="8" opacity="0.9"/>
+  </g>
+
+  <!-- Brand typography -->
+  <g id="typography" text-anchor="middle">
+    <text class="brand" x="512" y="744" font-size="132" letter-spacing="28" fill="url(#red)">藏宝宝</text>
+
+    <g id="tagline" transform="translate(0,0)">
+      <line x1="232" y1="808" x2="366" y2="808" stroke="url(#gold)" stroke-width="4"/>
+      <line x1="658" y1="808" x2="792" y2="808" stroke="url(#gold)" stroke-width="4"/>
+      <rect x="220" y="800" width="16" height="16" transform="rotate(45 228 808)" fill="none" stroke="url(#gold)" stroke-width="3"/>
+      <rect x="788" y="800" width="16" height="16" transform="rotate(45 796 808)" fill="none" stroke="url(#gold)" stroke-width="3"/>
+      <text class="sub" x="512" y="825" font-size="48" letter-spacing="18" fill="url(#gold)">秘境卓尼</text>
+    </g>
+
+    <text class="company" x="512" y="878" font-size="30" letter-spacing="14" fill="#1A1A2E">卓尼县藏宝宝网络有限责任公司</text>
+  </g>
+</svg>
