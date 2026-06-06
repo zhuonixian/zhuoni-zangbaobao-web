@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF0E6;
+  --color-tibetan-red: #860C1E;
+  --color-bronze-gold: #B6A766;
+  --color-ink-blue: #1A1A2E;
+  --color-prairie-green: #2D5016;
+  --color-earth-brown: #6B4C3B;
+  --color-linen: #E8E0D0;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+}
