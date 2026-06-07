@@ -1,15 +1,11 @@
 ---
 /**
  * ContactForm component
- * A contact form with fields for name, phone, email, and message.
+ * Submits to Cloudflare Pages Function which forwards to Feishu.
  */
 ---
 
-<form
-  action="https://formspree.io/f/xxxxxxxx"
-  method="POST"
-  class="flex flex-col gap-4"
->
+<form id="contact-form" class="flex flex-col gap-4">
   <div class="flex flex-col gap-1.5">
     <label for="name" class="text-sm text-earth-brown">姓名</label>
     <input
@@ -58,8 +54,56 @@
 
   <button
     type="submit"
-    class="self-start bg-tibetan-red text-white px-6 py-3 rounded font-semibold"
+    id="submit-btn"
+    class="self-start bg-tibetan-red text-white px-6 py-3 rounded font-semibold hover:bg-tibetan-red/90 transition-colors disabled:opacity-50"
   >
     提交留言
   </button>
+
+  <p id="form-status" class="text-sm hidden"></p>
 </form>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const status = document.getElementById("form-status") as HTMLParagraphElement;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = "提交中...";
+    status.classList.add("hidden");
+
+    const data = {
+      name: (form.querySelector("#name") as HTMLInputElement).value,
+      phone: (form.querySelector("#phone") as HTMLInputElement).value,
+      email: (form.querySelector("#email") as HTMLInputElement).value,
+      message: (form.querySelector("#message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await resp.json();
+
+      if (resp.ok) {
+        status.textContent = "留言提交成功！我们会尽快与您联系。";
+        status.className = "text-sm text-grassland-green";
+        form.reset();
+      } else {
+        status.textContent = result.error || "提交失败，请稍后重试。";
+        status.className = "text-sm text-tibetan-red";
+      }
+    } catch {
+      status.textContent = "网络错误，请检查网络后重试。";
+      status.className = "text-sm text-tibetan-red";
+    }
+
+    status.classList.remove("hidden");
+    btn.disabled = false;
+    btn.textContent = "提交留言";
+  });
+</script>
