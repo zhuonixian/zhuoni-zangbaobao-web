@@ -2,6 +2,7 @@ interface Env {
   FEISHU_APP_ID: string;
   FEISHU_APP_SECRET: string;
   FEISHU_CHAT_ID: string;
+  FEISHU_AT_USER_ID?: string;
 }
 
 interface FormData {
@@ -63,8 +64,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   const now = new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" });
+  const atTag = FEISHU_AT_USER_ID
+    ? `<at user_id="${FEISHU_AT_USER_ID}">俞卓玛</at>`
+    : `<at user_id="all">所有人</at>`;
   const text = [
-    "📬 藏宝宝官网收到新留言",
+    `${atTag} 📬 藏宝宝官网收到新留言`,
     "",
     `👤 姓名：${form.name}`,
     form.phone ? `📱 电话：${form.phone}` : "",
