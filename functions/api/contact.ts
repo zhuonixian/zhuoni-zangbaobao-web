@@ -38,7 +38,7 @@ async function sendMessage(token: string, chatId: string, content: string): Prom
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_CHAT_ID } = context.env;
+  const { FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_CHAT_ID, FEISHU_AT_USER_ID } = context.env;
 
   if (!FEISHU_APP_ID || !FEISHU_APP_SECRET || !FEISHU_CHAT_ID) {
     return new Response(JSON.stringify({ error: "服务未配置" }), { status: 500 });
