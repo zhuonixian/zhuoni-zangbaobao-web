@@ -13,6 +13,7 @@
       id="name"
       name="name"
       required
+      maxlength="50"
       placeholder="请输入姓名"
       class="w-full px-4 py-3 border border-linen rounded bg-white text-ink-blue focus:outline-none focus:border-tibetan-red transition-colors"
     />
@@ -25,6 +26,8 @@
       id="phone"
       name="phone"
       placeholder="请输入电话号码"
+      pattern="[\d\s\-+()]{5,20}"
+      maxlength="20"
       class="w-full px-4 py-3 border border-linen rounded bg-white text-ink-blue focus:outline-none focus:border-tibetan-red transition-colors"
     />
   </div>
@@ -36,6 +39,7 @@
       id="email"
       name="email"
       placeholder="请输入邮箱地址"
+      maxlength="100"
       class="w-full px-4 py-3 border border-linen rounded bg-white text-ink-blue focus:outline-none focus:border-tibetan-red transition-colors"
     />
   </div>
@@ -47,6 +51,7 @@
       name="message"
       required
       rows="5"
+      maxlength="2000"
       placeholder="请输入留言内容"
       class="w-full px-4 py-3 border border-linen rounded bg-white text-ink-blue focus:outline-none focus:border-tibetan-red transition-colors"
     ></textarea>
