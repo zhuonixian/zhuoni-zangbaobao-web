@@ -4,18 +4,19 @@ import PageBanner from '@/components/PageBanner.astro';
 import CultureCard from '@/components/CultureCard.astro';
 import { cultures } from '@/data/cultures';
 
-const mainCultures = cultures.slice(0, 2);
-const sideCultures = cultures.slice(2);
+const mainCultures = cultures.slice(0, 3);
+const sideCultures = cultures.slice(3, 5);
+const extraCultures = cultures.slice(5);
 ---
 
 <BaseLayout title="文化故事 - 藏宝宝">
   <PageBanner
     title="藏王故里·秘境卓尼"
-    subtitle="探索卓尼五大地域文化"
+    subtitle="探索卓尼八大地域文化"
     label="CULTURE & STORIES"
   />
 
-  <!-- Main Culture Section -->
+  <!-- Main Culture Section (top 3, full-width cards) -->
   <section class="section-padding bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
       {mainCultures.map((culture, index) => (
@@ -26,11 +27,11 @@ const sideCultures = cultures.slice(2);
     </div>
   </section>
 
-  <!-- Side Cultures Section -->
+  <!-- Side Cultures Section (middle 2, grid) -->
   <section class="section-padding bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {sideCultures.map((culture, index) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sideCultures.map((culture) => (
           <div
             id={culture.slug}
             class="bg-cream rounded-lg p-6 text-center hover:shadow-md transition-shadow"
@@ -55,4 +56,37 @@ const sideCultures = cultures.slice(2);
       </div>
     </div>
   </section>
+
+  <!-- Extra Cultures Section (bottom 3, grid) -->
+  {extraCultures.length > 0 && (
+    <section class="section-padding bg-cream/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-ink-blue text-center mb-8">更多卓尼文化</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {extraCultures.map((culture) => (
+            <div
+              id={culture.slug}
+              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-3"
+                style={`background-color: ${culture.color};`}
+              />
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-ink-blue mb-1">
+                  {culture.title}
+                </h3>
+                <p class="text-sm text-earth-brown mb-3">
+                  {culture.subtitle}
+                </p>
+                <p class="text-sm text-earth-brown leading-relaxed">
+                  {culture.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
