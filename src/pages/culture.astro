@@ -34,7 +34,7 @@ const extraCultures = cultures.slice(5);
         {sideCultures.map((culture) => (
           <div
             id={culture.slug}
-            class="bg-cream rounded-lg p-6 text-center hover:shadow-md transition-shadow"
+            class="bg-cream rounded-lg p-6 text-center hover:shadow-md transition-shadow flex flex-col"
           >
             <div
               class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold"
@@ -48,9 +48,16 @@ const extraCultures = cultures.slice(5);
             <p class="text-sm text-earth-brown mb-3">
               {culture.subtitle}
             </p>
-            <p class="text-earth-brown leading-relaxed">
+            <p class="text-earth-brown leading-relaxed flex-1">
               {culture.description}
             </p>
+            <a
+              href={`/culture/${culture.slug}`}
+              class="inline-flex items-center gap-1 self-center mt-4 px-5 py-2 rounded-lg text-sm font-medium text-white transition hover:shadow-md"
+              style={`background-color: ${culture.color};`}
+            >
+              了解更多 <span>&rarr;</span>
+            </a>
           </div>
         ))}
       </div>
@@ -66,22 +73,29 @@ const extraCultures = cultures.slice(5);
           {extraCultures.map((culture) => (
             <div
               id={culture.slug}
-              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
             >
               <div
                 class="h-3"
                 style={`background-color: ${culture.color};`}
               />
-              <div class="p-6">
+              <div class="p-6 flex flex-col flex-1">
                 <h3 class="text-lg font-bold text-ink-blue mb-1">
                   {culture.title}
                 </h3>
                 <p class="text-sm text-earth-brown mb-3">
                   {culture.subtitle}
                 </p>
-                <p class="text-sm text-earth-brown leading-relaxed">
+                <p class="text-sm text-earth-brown leading-relaxed flex-1">
                   {culture.description}
                 </p>
+                <a
+                  href={`/culture/${culture.slug}`}
+                  class="inline-flex items-center gap-1 self-start mt-4 text-sm font-medium transition"
+                  style={`color: ${culture.color};`}
+                >
+                  了解更多 <span>&rarr;</span>
+                </a>
               </div>
             </div>
           ))}
