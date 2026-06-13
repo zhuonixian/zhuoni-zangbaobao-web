@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-1">
+      <div class="hidden lg:flex items-center space-x-2">
         {navLinks.map((link) => {
           const isActive = currentPath === link.href ||
             (link.href !== '/' && currentPath.startsWith(link.href));
@@ -33,7 +33,7 @@ const currentPath = Astro.url.pathname;
             <a
               href={link.href}
               class:list={[
-                'px-4 py-2 rounded-md text-sm font-medium transition-all duration-200',
+                'px-5 py-3 rounded-md text-base font-medium transition-all duration-200',
                 isActive && 'text-tibetan-red font-semibold',
               ]}
               {...(!isActive && {
